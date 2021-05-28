@@ -19,6 +19,13 @@
         <argument
             android:name="movie"
             app:argType="com.example.imoviesapp.service.model.Movie" />
+        <action
+            android:id="@+id/action_detailsFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.imoviesapp.fragment.VideoFragment"
+        android:label="VideoFragment" />
 
 </navigation>

@@ -11,4 +11,5 @@ interface ApiService {
     fun getMovies(@Query("page")page :Long) : Call<MovieModel>
 
 
+
 }

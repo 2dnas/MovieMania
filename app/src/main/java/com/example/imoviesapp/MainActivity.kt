@@ -10,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.imoviesapp.api.ApiService
 import com.example.imoviesapp.databinding.ActivityMainBinding
 import com.example.imoviesapp.service.model.MovieModel
 import com.example.imoviesapp.viewmodel.MovieViewModel
@@ -28,6 +29,14 @@ class MainActivity : AppCompatActivity() {
         val controller  = navHost.navController
 
         binding.bottomNavMenu.setupWithNavController(controller)
+
+        controller.addOnDestinationChangedListener{ _ , destination, _ ->
+            when(destination.id){
+                R.id.videoFragment -> binding.bottomNavMenu.visibility = View.GONE
+
+                else -> binding.bottomNavMenu.visibility = View.VISIBLE
+            }
+        }
 
     }
 }
